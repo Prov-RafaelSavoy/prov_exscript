@@ -29,7 +29,7 @@ from Exscript.protocols.drivers.driver import Driver
 _user_re = [re.compile(r'(user|login): $', re.I)]
 _password_re = [re.compile(r'Password: ?$')]
 _linux_re = re.compile(r'\blinux\b', re.I)
-
+_last_login_re = re.compile(r'Last login: [A-Za-z]{3} [A-Za-z]{3}\s+\d+\s+\d{2}:\d{2}:\d{2}\s+\d{4} from \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}',re.I)
 
 class ShellDriver(Driver):
 
@@ -37,10 +37,14 @@ class ShellDriver(Driver):
         Driver.__init__(self, 'shell')
         self.user_re = _user_re
         self.password_re = _password_re
+        self.prompt_re = [re.compile(r'\[[^\]]+\]\$', re.I)]
 
     def check_head_for_os(self, string):
+        if _last_login_re.search(string):
+            return 21
         if _linux_re.search(string):
             return 70
-        if _user_re[0].search(string):
-            return 20
+        for re in _user_re:    
+            if re.search(string):
+                return 20
         return 0
