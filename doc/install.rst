@@ -20,7 +20,7 @@ Installing from GitHub
 
 ::
 
-	git clone git://github.com/knipknap/exscript
+	git clone git://github.com/Prov-RafaelSavoy/prov_exscript
 	cd exscript
 	sudo make install
 
@@ -32,4 +32,4 @@ If you installed from GitHub, you can run the integrated testsuite::
 	make tests
 
 There shouldn't be any errors, so if something comes up,
-`please file a bug <https://github.com/knipknap/exscript/issues>`_.
+`please file a bug <https://github.com/Prov-RafaelSavoy/prov_exscript/issues>`_.

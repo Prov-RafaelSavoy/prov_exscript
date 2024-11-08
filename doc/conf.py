@@ -20,10 +20,10 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # Auto-generate API documentation.
 from sphinx.apidoc import main
-apidoc_exclude = [os.path.join('..', 'Exscript', 'interpreter'),
-                  os.path.join('..', 'Exscript', 'external'),
-                  os.path.join('..', 'Exscript', 'parselib'),
-                  os.path.join('..', 'Exscript', 'workqueue')]
+apidoc_exclude = [os.path.join('..', 'prov_exscript', 'interpreter'),
+                  os.path.join('..', 'prov_exscript', 'external'),
+                  os.path.join('..', 'prov_exscript', 'parselib'),
+                  os.path.join('..', 'prov_exscript', 'workqueue')]
 main(['-d5', '-Mef', '-o', '.', '../Exscript']
      + [os.path.abspath(p) for p in apidoc_exclude])
 
@@ -54,7 +54,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Exscript'
+project = u'prov_exscript'
 copyright = u'2017, Samuel Abels'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -178,7 +178,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Exscript'
+htmlhelp_basename = 'prov_exscript'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -227,7 +227,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'exscript', u'Exscript Documentation',
+    ('index', 'prov_exscript', u'Exscript Documentation',
      [u'Samuel Abels'], 1)
 ]
 
@@ -241,8 +241,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Exscript', u'Exscript Documentation',
-   u'Samuel Abels', 'Exscript', 'One line description of project.',
+  ('index', 'prov_exscript', u'Exscript Documentation',
+   u'Samuel Abels', 'prov_exscript', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -259,7 +259,7 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'Exscript'
+epub_title = u'prov_exscript'
 epub_author = u'Samuel Abels'
 epub_publisher = u'Samuel Abels'
 epub_copyright = u'2017, Samuel Abels'

@@ -12,10 +12,10 @@
     :alt: Code Climate
 
 .. image:: https://img.shields.io/github/stars/knipknap/exscript.svg
-    :target: https://github.com/knipknap/exscript/stargazers
+    :target: https://github.com/Prov-RafaelSavoy/prov_exscript/stargazers
 
 .. image:: https://img.shields.io/github/license/knipknap/exscript.svg
-    :target: https://github.com/knipknap/exscript/blob/master/COPYING
+    :target: https://github.com/Prov-RafaelSavoy/prov_exscript/blob/master/COPYING
 
 |
 What is Exscript?
@@ -40,7 +40,7 @@ Using Exscript with Python
 
 Make sure to check out the :doc:`python_tutorial`.
 You may also want to look at the
-`Python examples <https://github.com/knipknap/exscript/tree/master/demos/>`_.
+`Python examples <https://github.com/Prov-RafaelSavoy/prov_exscript/tree/master/demos/>`_.
 
 Using the Exscript command line tool
 ------------------------------------

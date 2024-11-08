@@ -1,8 +1,8 @@
 import sys
 import os
 from setuptools import setup, find_packages
-sys.path.insert(0, 'Exscript')
-from version import __version__
+sys.path.insert(0, 'prov_exscript')
+from Exscript.version import __version__
 
 # Import the project description from the README.
 descr = '''
@@ -19,13 +19,13 @@ setup(name             = 'Prov_Exscript',
       author           = 'Samuel Abels',
       author_email     = 'knipknap@gmail.com',
       license          = 'MIT',
-      package_dir      = {'Exscript': 'Exscript'},
+      package_dir      = {'prov_exscript': 'prov_exscript'},
       package_data     = {},
       packages         = find_packages(),
       scripts          = ['scripts/exscript', 'scripts/otp'],
       install_requires = ['future', 'configparser', 'paramiko', 'pycryptodomex'],
       extras_require   = {},
-      keywords         = ' '.join(['exscript',
+      keywords         = ' '.join(['prov_exscript',
                                    'telnet',
                                    'ssh',
                                    'network',
@@ -33,7 +33,7 @@ setup(name             = 'Prov_Exscript',
                                    'automate',
                                    'automation',
                                    'library']),
-      url              = 'https://github.com/knipknap/exscript/',
+      url              = 'https://github.com/Prov-RafaelSavoy/prov_exscript/',
       classifiers      = [
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
