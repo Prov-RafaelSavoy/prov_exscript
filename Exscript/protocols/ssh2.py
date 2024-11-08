@@ -148,22 +148,27 @@ class SSH2(Protocol):
             return
         self._system_host_keys.load(filename)
 
-    def _paramiko_connect(self):
-        # Find supported address families.
-        addrinfo = socket.getaddrinfo(self.host, self.port)
-        for family, socktype, proto, canonname, sockaddr in addrinfo:
-            af = family
-            addr = sockaddr
-            if socktype == socket.SOCK_STREAM:
-                break
+    def _paramiko_connect(self, sock=None):
+        if sock is not None:
+            self.sock = sock
+            print("A")
+        else:
+            # Find supported address families.
+            addrinfo = socket.getaddrinfo(self.host, self.port)
+            for family, socktype, proto, canonname, sockaddr in addrinfo:
+                af = family
+                addr = sockaddr
+                if socktype == socket.SOCK_STREAM:
+                    break
 
-        # Open a socket.
-        self.sock = socket.socket(af, socket.SOCK_STREAM)
-        try:
-            self.sock.settimeout(self.connect_timeout or None)
-        except:
-            pass
-        self.sock.connect(addr)
+            # Open a socket.
+            self.sock = socket.socket(af, socket.SOCK_STREAM)
+            try:
+                self.sock.settimeout(self.connect_timeout or None)
+            except:
+                pass
+            self.sock.connect(addr)
+            
 
         # Init the paramiko protocol.
         t = paramiko.Transport(self.sock)
@@ -328,10 +333,10 @@ class SSH2(Protocol):
             self._dbg(1, 'Failed to open shell.')
             raise LoginFailure('Failed to open shell: ' + str(e))
 
-    def _connect_hook(self, hostname, port):
+    def _connect_hook(self, hostname, port, sock=None):
         self.host = hostname
         self.port = port or 22
-        self.client = self._paramiko_connect()
+        self.client = self._paramiko_connect(sock)
         self._load_system_host_keys()
         return True
 
