@@ -40,7 +40,7 @@ from socketserver import ThreadingMixIn
 def md5hex(x):
     return hashlib.md5(x).hexdigest()
 
-default_realm = 'exscript'
+default_realm = 'prov_exscript'
 
 # This is convoluted because there's no way to tell 2to3 to insert a
 # byte literal.

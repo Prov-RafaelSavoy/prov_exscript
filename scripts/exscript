@@ -414,7 +414,7 @@ The name of an exscript driver to use for all connections (overriding os detecti
 
 parser.add_option('--execute', '-e',
                   dest    = 'execute',
-                  metavar = 'EXSCRIPT',
+                  metavar = 'prov_exscript',
                   help    = 'Interprets the given string as the script.')
 
 parser.add_option('--hosts',
